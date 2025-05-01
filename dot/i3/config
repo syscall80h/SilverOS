@@ -1,0 +1,48 @@
+# Définir la touche mod (Super/Windows)
+set $mod Mod4
+
+# Définir la police
+font pango:JetBrains Mono Nerd Font 10
+
+# Configurer les gaps (espacements)
+gaps inner 10
+gaps outer 10
+smart_gaps on
+
+# Configurer les bordures
+new_window pixel 2
+new_float normal
+
+# Raccourcis clavier
+bindsym $mod+Return exec alacritty
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exit
+
+# Espaces de travail
+set $ws1 "1: \uf489 Terminal"
+set $ws2 "2: \udb83\udf94 Web"
+set $ws3 "3: \uf4d4 Fichiers"
+set $ws4 "4: \ue8da Code"
+
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+
+# Règles pour les fenêtres flottantes
+for_window [class="Pavucontrol"] floating enable
+for_window [class="feh"] floating enable
+for_window [class="Arandr"] floating enable
+
+# Définir le fond d'écran
+exec_always feh --bg-fill ~/Images/wallpaper.jpg
+
+# Lancer Picom pour les effets de transparence
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+
+# Lancer Polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh

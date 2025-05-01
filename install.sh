@@ -2,7 +2,7 @@
 ### Installation de i3 et SDDM
 
 sudo apt update
-sudo apt install xorg i3 sddm dunst rofi kitty unzip polybar lxappearance libgtk-4-dev fish autorandr python3-venv curl -y
+sudo apt install xorg i3 sddm dunst rofi kitty unzip polybar lxappearance libgtk-4-dev fish autorandr python3-venv curl feh -y
 
 # Mettre SDDM par défaut
 sudo dpkg-reconfigure sddm
@@ -23,8 +23,17 @@ rm ~/.local/share/fonts/JetBrainsMono.zip
 fc-cache -fv
 
 ### fish customisation
-sudo chsh shawn | /usr/bin/fish
 curl -s https://ohmyposh.dev/install.sh | bash -s
+
+export PATH=$PATH:$HOME/.local/bin
+
+mkdir -p ~/.config/oh-my-posh/
+cp dot/oh-my-posh/* ~/.config/oh-my-posh/
+
+# Mettre oh-my-posh en shell
+cat << 'EOF' >> ~/.bashrc
+eval "$(oh-my-posh init --config '~/.config/oh-my-posh/cattpuccin-macchiato.json' bash)"
+EOF
 
 # font pout fish
 oh-my-posh font install meslo
@@ -38,6 +47,10 @@ cd picom
 meson setup --buildtype=release build
 ninja -C build
 sudo ninja -C build install
+
+mkdir -p ~/.config/picom
+cp dot/picom.conf ~/.config/picom/
+
 
 ### Kitty customisation
 kitty +kitten themes
