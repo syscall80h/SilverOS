@@ -2,10 +2,14 @@
 ### Installation de i3 et SDDM
 
 sudo apt update
-sudo apt install xorg i3 sddm dunst rofi kitty unzip polybar lxappearance libgtk-4-dev fish autorandr python3-venv curl feh -y
+sudo apt install xorg i3 sddm vim dunst rofi alacritty unzip polybar dolphin lxappearance libgtk-4-dev fish autorandr python3-venv curl feh -y
 
 # Mettre SDDM par défaut
 sudo dpkg-reconfigure sddm
+
+### Alacrity customisation
+mkdir -p ~/.config/alacritty/
+cp dot/alacritty/* ~/.config/alacritty/
 
 # Crée le répertoire des polices s'il n'existe pas
 mkdir -p ~/.local/share/fonts
@@ -54,14 +58,18 @@ sudo ninja -C build install
 mkdir -p ~/.config/picom
 cp dot/picom.conf ~/.config/picom/
 
+### Config i3
+mkdir -p ~/.config/i3/
+cp dot/i3/config ~/.config/i3/
 
-### Kitty customisation
-kitty +kitten themes
+### config polybar
+mkdir -p ~/.config/polybar
+cp dot/polybar/* ~/.config/polybar/
 
-#rofi
-git clone https://github.com/adi1090x/rofi
+chmod +x ~/.config/polybar/launch.sh
 
-rofi -show drun -theme ~/.config/rofi/launchers/type-x/style-x.rasi # à mettre dans le exec de i3 depuis le binding de la key
+### brave
+curl -fsS https://dl.brave.com/install.sh | sh
 
 # Install catppucin theme
 sudo apt install sassc gtk2-engines-murrine gnome-themes-extra
