@@ -21,10 +21,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 
 # Espaces de travail
-set $ws1 "1: \uf489 Terminal"
-set $ws2 "2: \udb83\udf94 Web"
-set $ws3 "3: \uf4d4 Fichiers"
-set $ws4 "4: \ue8da Code"
+set $ws1 "1:  Terminal"
+set $ws2 "2: 󰾔 Web"
+set $ws3 "3:  Fichiers"
+set $ws4 "4:  Code"
 
 
 bindsym $mod+1 workspace $ws1
@@ -39,7 +39,7 @@ for_window [class="feh"] floating enable
 for_window [class="Arandr"] floating enable
 
 # Définir le fond d'écran
-exec_always feh --bg-fill ~/Images/wallpaper.jpg
+exec_always feh --bg-fill ~/.config/wallpapers/bg_co_pastel.png
 
 # Lancer Picom pour les effets de transparence
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
