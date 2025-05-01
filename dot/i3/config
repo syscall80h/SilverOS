@@ -19,19 +19,20 @@ bindsym $mod+d exec rofi -show drun
 bindsym $mod+q kill
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
+bindsym $mod+b exec brave-browser
 
 # Espaces de travail
-set $ws1 "1:  Terminal"
-set $ws2 "2: 󰾔 Web"
-set $ws3 "3:  Fichiers"
-set $ws4 "4:  Code"
+set $ws1 "Home"
+set $ws2 "Web"
+set $ws3 "Files"
+set $ws4 "Code"
 
-
+# Assignation des raccourcis clavier
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
+
 
 # Règles pour les fenêtres flottantes
 for_window [class="Pavucontrol"] floating enable
@@ -46,3 +47,4 @@ exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Lancer Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+

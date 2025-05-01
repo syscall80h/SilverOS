@@ -15,13 +15,16 @@ cp dot/alacritty/* ~/.config/alacritty/
 mkdir -p ~/.local/share/fonts
 
 # Télécharge l'archive de la police
-wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/NerdFontsSymbolsOnly.zip
 
 # Décompresse l'archive directement dans le répertoire des polices
 unzip -o ~/.local/share/fonts/JetBrainsMono.zip -d ~/.local/share/fonts
+unzip -o ~/.local/share/fonts/NerdFontsSymbolsOnly.zip -d ~/.local/share/fonts
 
 # Supprime l'archive ZIP
 rm ~/.local/share/fonts/JetBrainsMono.zip
+rm ~/.local/share/fonts/NerdFontsSymbolsOnly.zip
 
 # Recharge le cache des polices
 fc-cache -fv
