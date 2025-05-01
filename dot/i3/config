@@ -16,7 +16,7 @@ new_float normal
 # Raccourcis clavier
 bindsym $mod+Return exec alacritty
 bindsym $mod+d exec rofi -show drun
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 
