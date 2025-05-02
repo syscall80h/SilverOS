@@ -7,14 +7,14 @@ font pango:JetBrains Mono Nerd Font 10
 # Configurer les gaps (espacements)
 gaps inner 10
 gaps outer 10
-smart_gaps on
+smart_gaps off
 
 # Configurer les bordures
 new_window pixel 2
 new_float normal
 
 # Raccourcis clavier
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+q kill
 bindsym $mod+Shift+r restart
@@ -40,11 +40,11 @@ for_window [class="feh"] floating enable
 for_window [class="Arandr"] floating enable
 
 # Définir le fond d'écran
-exec_always feh --bg-fill ~/.config/wallpapers/bg_co_pastel.png
+exec feh --bg-fill ~/.config/wallpapers/bg_co_pastel.png
 
 # Lancer Picom pour les effets de transparence
-exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Lancer Polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id ~/.config/polybar/launch.sh
 

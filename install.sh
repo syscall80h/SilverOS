@@ -2,15 +2,23 @@
 ### Installation de i3 et SDDM
 
 sudo apt update
-sudo apt install xorg i3 sddm vim dunst rofi alacritty unzip polybar dolphin lxappearance libgtk-4-dev fish autorandr python3-venv curl feh -y
+sudo apt install xorg i3 sddm vim dunst rofi unzip polybar dolphin lxappearance libgtk-4-dev fish autorandr python3-venv curl feh -y
 
 # Mettre SDDM par défaut
 sudo dpkg-reconfigure sddm
 
-### Alacrity customisation
-mkdir -p ~/.config/alacritty/
-cp dot/alacritty/* ~/.config/alacritty/
+### Install kitty
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin \
+    launch=n
 
+# Ajout des chemins
+sudo ln -s ~/.local/kitty.app/bin/kitty /usr/bin/
+sudo ln -s ~/.local/kitty.app/bin/kitten /usr/bin/
+
+
+cp dot/kitty/* ~/.config/kitty/
+
+### Font
 # Crée le répertoire des polices s'il n'existe pas
 mkdir -p ~/.local/share/fonts
 
