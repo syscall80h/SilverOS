@@ -19,20 +19,20 @@ uptime="`uptime -p | sed -e 's/up //g'`"
 host=`hostname`
 
 # Options
-hibernate='ïŠŒ'
-shutdown='ï€‘'
-reboot='ï€ž'
-lock='ï€£'
-suspend='ó°¤„'
-logout='ó°ˆ†'
+hibernate=''
+shutdown=''
+reboot=''
+lock=''
+suspend='󰤄'
+logout='󰈆'
 yes='yes'
 no='no'
 
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
-		-p "ï€‡ $USER@$host" \
-		-mesg "ó±©› Last Login: $lastlogin | î™ Uptime: $uptime" \
+		-p " $USER@$host" \
+		-mesg "󱩛 Last Login: $lastlogin |  Uptime: $uptime" \
 		-theme ${dir}/${theme}.rasi
 }
 

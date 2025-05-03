@@ -103,6 +103,9 @@ sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfont
 git clone https://github.com/Raymo111/i3lock-color.git
 cd i3lock-color
 ./install-i3lock-color.sh
+cd ../
+cp dot/local/bin/lock.sh ~/.local/bin/lock.sh
+chmod +x ~/.local/bin/lock.sh
 
 # Install catppucin theme
 sudo apt install sassc gtk2-engines-murrine gnome-themes-extra
