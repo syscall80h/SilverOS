@@ -44,11 +44,11 @@ export PATH=$PATH:$HOME/.local/bin
 
 mkdir -p ~/.config/oh-my-posh/
 cp dot/oh-my-posh/* ~/.config/oh-my-posh/
+cp dot/fish/* ~/.config/fish/
 
-# Mettre oh-my-posh en shell
-cat << 'EOF' >> ~/.bashrc
-eval "$(oh-my-posh init --config '~/.config/oh-my-posh/cattpuccin-macchiato.json' bash)"
-EOF
+# Changement du shell
+chsh -s /usr/bin/fish
+
 
 # font pout fish (à la mano pour l'instant)
 # oh-my-posh font install meslo
@@ -81,6 +81,18 @@ chmod +x ~/.config/polybar/launch.sh
 
 ### brave
 curl -fsS https://dl.brave.com/install.sh | sh
+
+### Install btop
+wget https://github.com/aristocratos/btop/releases/download/v1.4.2/btop-x86_64-linux-musl.tbz
+tar -xvf btop-x86_64-linux-musl.tbz
+cd btop
+
+sudo make install
+sudo make setcap
+sudo make setuid
+
+# Custom theme btop
+cp dot/btop/* ~/.config/btop/themes/
 
 # Install catppucin theme
 sudo apt install sassc gtk2-engines-murrine gnome-themes-extra
