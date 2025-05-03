@@ -10,16 +10,17 @@ gaps outer 10
 smart_gaps off
 
 # Configurer les bordures
-new_window pixel 2
+new_window pixel 4
 new_float normal
 
 # Raccourcis clavier
 bindsym $mod+Return exec kitty
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun -theme ~/.config/rofi/config.rasi
 bindsym $mod+q kill
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 bindsym $mod+b exec brave-browser
+bindsym $mod+Shift+l exec ~/.local/bin/lock.sh
 
 # Espaces de travail
 set $ws1 "Home"
@@ -33,6 +34,12 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 
+# Couleur des bordures
+client.focused          #cad3f5 #cad3f5 #cad3f5 #cad3f5
+client.focused_inactive #24273a #24273a #24273a #24273a
+client.unfocused        #24273a #24273a #24273a #24273a
+client.urgent           #E78284 #E78284 #E78284 #E78284
+client.placeholder      #24273a #24273a #24273a #24273a
 
 # Règles pour les fenêtres flottantes
 for_window [class="Pavucontrol"] floating enable
@@ -47,4 +54,3 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Lancer Polybar
 exec --no-startup-id ~/.config/polybar/launch.sh
-
