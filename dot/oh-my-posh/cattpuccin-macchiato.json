@@ -10,7 +10,8 @@
           "periwinkle": "#c8b6ff",
           "vistablue": "#99A5FF",
           "lavande": "#D6E3FF",
-          "green": "#c7f9cc"
+          "green": "#c7f9cc",
+          "aquamarine": "#00F5AB"
     },
     "blocks": [
   {
@@ -22,6 +23,17 @@
         "style": "plain",
         "template": "{{.Icon}} ",
         "type": "os"
+      },
+      {
+        "type": "python",
+        "style": "plain",
+        "foreground": "p:aquamarine",
+        "template": " (venv){{ .Full }} ",
+        "properties": {
+          "display_mode": "environment",
+          "fetch_virtual_env": true,
+          "home_enabled": true
+        }
       },
       {
         "foreground": "p:blue",
@@ -68,8 +80,8 @@
         "type": "text",
         "style": "plain",
         "template": "\n\udb85\udfa9",
-        "foreground": "p:blue"
-      }
+        "foreground": "p:periwinkle"
+      }      
     ]
   }
 ],
