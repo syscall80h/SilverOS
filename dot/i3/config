@@ -15,12 +15,13 @@ new_float normal
 
 # Raccourcis clavier
 bindsym $mod+Return exec kitty
-bindsym $mod+d exec rofi -show drun -theme ~/.config/rofi/config.rasi
+bindsym $mod+r exec rofi -show drun -theme ~/.config/rofi/config.rasi
 bindsym $mod+q kill
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 bindsym $mod+b exec brave-browser
 bindsym $mod+Shift+l exec ~/.local/bin/lock.sh
+bindsym $mod+d exec dolphin
 
 # Espaces de travail
 set $ws1 "Home"
@@ -35,7 +36,7 @@ bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 
 # Couleur des bordures
-client.focused          #cad3f5 #cad3f5 #cad3f5 #cad3f5
+client.focused          #A1CDF5 #A1CDF5 #A1CDF5 #A1CDF5
 client.focused_inactive #24273a #24273a #24273a #24273a
 client.unfocused        #24273a #24273a #24273a #24273a
 client.urgent           #E78284 #E78284 #E78284 #E78284
@@ -45,6 +46,9 @@ client.placeholder      #24273a #24273a #24273a #24273a
 for_window [class="Pavucontrol"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="Arandr"] floating enable
+for_window [class="kitty" title="btop"] floating enable, resize set 1900 1200, move absolute position center
+
+floating_modifier $mod
 
 # Définir le fond d'écran
 exec feh --bg-fill ~/.config/wallpapers/bg_co_pastel.png

@@ -11,11 +11,15 @@ sudo apt install xorg i3 sddm vim dunst rofi unzip polybar dolphin lxappearance 
 # Mettre SDDM par défaut
 sudo dpkg-reconfigure sddm
 
+# Config sddm
+sudo tar -xvf dot/sddm/KDE-Story.tar.gz -C /usr/share/sddm/themes/
+sudo cp dot/sddm/theme.conf /usr/share/sddm/themes/KDE-Story/
+
 echo -e "[SilverOs] Fin de configuration pour sddm"
 
+### Install kitty
 echo -e "[SilverOs] Installation de kitty"
 
-### Install kitty
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin \
     launch=n
 
