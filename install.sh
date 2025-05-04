@@ -85,8 +85,12 @@ meson setup --buildtype=release build
 ninja -C build
 sudo ninja -C build install
 
+cd ../
+
 mkdir -p ~/.config/picom
-cp dot/picom.conf ~/.config/picom/
+cp dot/picom/picom.conf ~/.config/picom/
+
+rm -rf picom/
 
 echo -e "[SilverOs] Fin build de picom"
 
@@ -120,7 +124,11 @@ sudo make setcap
 sudo make setuid
 
 # Custom theme btop
+mkdir ~/.config/btop/themes/
+cd ../
 cp dot/btop/* ~/.config/btop/themes/
+
+rm -rf btop*
 
 echo -e "[SilverOs] Fin installation de Btop"
 
@@ -128,6 +136,7 @@ echo -e "[SilverOs] Fin installation de Btop"
 echo -e "[SilverOs] Config rofi"
 mkdir -p ~/.config/rofi
 cp -r dot/rofi/* ~/.config/rofi/
+chmod +x ~/.config/rofi/powermenu/powermenu.sh
 
 ### i3lock
 echo -e "[SilverOs] Installation de i3lock-color"
@@ -144,13 +153,13 @@ echo -e "[SilverOs] Fin install i3lock-color"
 ### Install catppucin theme
 echo -e "[SilverOs] Installation des themes"
 # GTK
-sudo apt install sassc gtk2-engines-murrine gnome-themes-extra
+sudo apt install sassc gtk2-engines-murrine gnome-themes-extra -y
 mkdir -p ~/.themes
 
 unzip -o dot/themes/Catppuccin-Dark-Macchiato-BL-MB.zip -d ~/.themes/
 
 # qt5 et qt6
-sudo apt install qt5-style-kvantum qt5-style-kvantum-themes 
+sudo apt install qt5-style-kvantum qt5-style-kvantum-themes -y
 echo 'export QT_STYLE_OVERRIDE=kvantum' >> ~/.profile
 mkdir -p ~/.config/Kvantum
 
