@@ -88,7 +88,7 @@ sudo ninja -C build install
 cd ../
 
 mkdir -p ~/.config/picom
-cp dot/picom/picom.conf ~/.config/picom/
+cp dot/picom/* ~/.config/picom/
 
 rm -rf picom/
 
@@ -124,7 +124,7 @@ sudo make setcap
 sudo make setuid
 
 # Custom theme btop
-mkdir ~/.config/btop/themes/
+mkdir -p ~/.config/btop/themes/
 cd ../
 cp dot/btop/* ~/.config/btop/themes/
 
@@ -161,8 +161,8 @@ unzip -o dot/themes/Catppuccin-Dark-Macchiato-BL-MB.zip -d ~/.themes/
 # qt5 et qt6
 sudo apt install qt5-style-kvantum qt5-style-kvantum-themes -y
 echo 'export QT_STYLE_OVERRIDE=kvantum' >> ~/.profile
-mkdir -p ~/.config/Kvantum
+mkdir -p ~/.config/Kvantum/catppuccin-macchiato-lavender/
 
-unzip -o dot/themes/catppuccin-macchiato-lavender.zip -d ~/.config/Kvantum
+unzip -o dot/themes/catppuccin-macchiato-lavender.zip -d ~/.config/Kvantum/catppuccin-macchiato-lavender/
 
 echo -e "[SilverOs] Fin install des themes"
