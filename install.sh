@@ -107,5 +107,18 @@ cd ../
 cp dot/local/bin/lock.sh ~/.local/bin/lock.sh
 chmod +x ~/.local/bin/lock.sh
 
-# Install catppucin theme
+### Install catppucin theme
+# GTK
 sudo apt install sassc gtk2-engines-murrine gnome-themes-extra
+mkdir -p ~/.themes
+
+unzip -o dot/themes/Catppuccin-Dark-Macchiato-BL-MB.zip -d ~/.themes/
+
+# qt5 et qt6
+sudo apt install qt5-style-kvantum qt5-style-kvantum-themes 
+echo 'export QT_STYLE_OVERRIDE=kvantum' >> ~/.profile
+mkdir -p ~/.config/Kvantum
+
+unzip -o dot/themes/catppuccin-macchiato-lavender.zip -d ~/.config/Kvantum
+
+
