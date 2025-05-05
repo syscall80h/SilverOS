@@ -6,7 +6,7 @@ set -e
 
 echo -e "[SilverOs] Installation des paquets i3"
 sudo apt update
-sudo apt install xorg i3 sddm vim dunst rofi unzip polybar dolphin lxappearance libgtk-4-dev fish autorandr python3-venv curl feh -y
+sudo apt install xorg i3 sddm vim dunst rofi unzip polybar dolphin fd-find bat lxappearance libgtk-4-dev fish autorandr python3-venv net-tools curl feh -y
 
 # Mettre SDDM par défaut
 sudo dpkg-reconfigure sddm
@@ -14,6 +14,7 @@ sudo dpkg-reconfigure sddm
 # Config sddm
 sudo tar -xvf dot/sddm/KDE-Story.tar.gz -C /usr/share/sddm/themes/
 sudo cp dot/sddm/theme.conf /usr/share/sddm/themes/KDE-Story/
+sudo cp dot/sddm/sddm.conf.d/theme.conf /etc/sddm.conf.d/
 
 echo -e "[SilverOs] Fin de configuration pour sddm"
 
@@ -69,6 +70,17 @@ cp dot/fish/* ~/.config/fish/
 
 # Changement du shell
 chsh -s /usr/bin/fish
+
+# install eza
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+git clone https://github.com/eza-community/eza.git
+cd eza
+cargo install --path .
+cd ../
+rm -rf eza
+
+# Aliases pour fish
+cp dot/fish/aliases.fish ~/.config/fish/conf.d/
 
 echo -e "[SilverOs] Fin configuration prompt"
 # font pout fish (à la mano pour l'instant)
