@@ -73,6 +73,8 @@ chsh -s /usr/bin/fish
 
 # install eza
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source source $HOME/.cargo/env
+
 git clone https://github.com/eza-community/eza.git
 cd eza
 cargo install --path .
@@ -122,6 +124,8 @@ mkdir -p ~/.config/polybar
 cp dot/polybar/* ~/.config/polybar/
 
 chmod +x ~/.config/polybar/launch.sh
+
+
 
 ### brave
 echo -e "[SilverOs] Installation de brave"
