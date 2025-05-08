@@ -12,6 +12,8 @@ sudo apt install xorg i3 sddm vim dunst rofi unzip polybar dolphin fd-find bat l
 sudo dpkg-reconfigure sddm
 
 # Config sddm
+sudo mkdir -p /etc/sddm.conf.d/
+
 sudo tar -xvf dot/sddm/KDE-Story.tar.gz -C /usr/share/sddm/themes/
 sudo cp dot/sddm/theme.conf /usr/share/sddm/themes/KDE-Story/
 sudo cp dot/sddm/sddm.conf.d/theme.conf /etc/sddm.conf.d/
@@ -73,7 +75,7 @@ chsh -s /usr/bin/fish
 
 # install eza
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source source $HOME/.cargo/env
+source $HOME/.cargo/env
 
 git clone https://github.com/eza-community/eza.git
 cd eza
